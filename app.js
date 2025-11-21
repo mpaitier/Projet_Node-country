@@ -22,10 +22,9 @@ require('./src/routes/getCountriesStats')(app)
 require('./src/routes/getCountriesByContinent')(app)
 require('./src/routes/getCountriesByContinentName')(app)
 require('./src/routes/getTopCountriesByPopulation')(app)
-
+require('./src/routes/getRecentCountries')(app)
 require('./src/routes/findAllCountries')(app)
 require('./src/routes/findCountryByPk')(app)
-
 // ___POST
 require('./src/routes/createCountry')(app)
 // ___PUT
