@@ -1,0 +1,134 @@
+.top-countries {
+  padding: 20px;
+}
+
+.top-countries-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.top-countries-header h2 {
+  color: #2c3e50;
+  margin: 0;
+}
+
+.limit-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.limit-selector label {
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.limit-selector select {
+  padding: 8px 12px;
+  border: 2px solid #dee2e6;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  background: white;
+}
+
+.limit-selector select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.top-countries-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.top-country-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.top-country-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.rank-badge {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.country-flag-small {
+  width: 60px;
+  height: 40px;
+  border-radius: 5px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.country-flag-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.country-details {
+  flex: 1;
+}
+
+.country-details h3 {
+  margin: 0 0 5px 0;
+  color: #2c3e50;
+  font-size: 18px;
+}
+
+.country-details p {
+  margin: 0;
+  color: #6c757d;
+  font-size: 14px;
+}
+
+.population-value {
+  font-size: 20px;
+  font-weight: bold;
+  color: #667eea;
+  min-width: 120px;
+  text-align: right;
+}
+
+.error-message {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 20px 0;
+  border: 1px solid #f5c6cb;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #6c757d;
+  font-size: 18px;
+}
+
