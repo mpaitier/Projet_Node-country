@@ -35,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         // Allows letters, spaces, hyphens, and apostrophes (with accented characters)
         is: {
-          args: /^[a-zA-ZÀ-ÖØ-öø-ÿ \-']+$/i,
+          args: /^[a-zA-Z0-9À-ÖØ-öø-ÿ \-',.]+$/i,
           msg: "Capital name can only contain letters, spaces, hyphens, and apostrophes."
         }
       }
@@ -46,10 +46,7 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         isInt: { msg: "Population must be an integer." },
         notNull: { msg: "Population is required." },
-        min: {
-          args: 0,
-          msg: "Population cannot be zero or less."
-        }
+        min: 0, 
       }
     },
     flag: {

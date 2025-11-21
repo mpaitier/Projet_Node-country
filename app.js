@@ -3,6 +3,7 @@ const favicon = require('serve-favicon')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const cors = require('cors')
+const db = require('./src/db/sequelize')
 
 const app = express()
 const port = 3000
@@ -13,11 +14,13 @@ app
     .use(cors())
     .use(bodyParser.json())
 
-require
+db.initDb()
+
+require('./src/routes/login')(app)
 
 app.use(({res}) => {
-  const message = 'Unable to find the resource requested! You can try another URL.'
-  res.status(404).json({message})
+    const message = 'Unable to find the resource requested! You can try another URL.'
+    res.status(404).json({message})
 })
 
 app.listen(port, () => {
