@@ -31,12 +31,7 @@ module.exports = (sequelize, DataTypes) => {
         notNull: { msg: "Capital is required." },
         len: {
           args: [1, 100],
-          msg: "Capital name must be between 1 and 100 characters long."
-        },
-        // Allows letters, spaces, hyphens, and apostrophes (with accented characters)
-        is: {
-          args: /^[a-zA-Z0-9À-ÖØ-öø-ÿ \-',.]+$/i,
-          msg: "Capital name can only contain letters, spaces, hyphens, and apostrophes."
+          msg: "Capital must be between 1 and 100 characters long."
         }
       }
     },
@@ -46,18 +41,22 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         isInt: { msg: "Population must be an integer." },
         notNull: { msg: "Population is required." },
-        min: 0, 
+        min: {
+          args: [0],
+          msg: "Population must be at least 0."
+        },
+        max: {
+          args: [9999999999], 
+          msg: "Population cannot exceed 9,999,999,999."
+        }
       }
     },
     flag: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        notEmpty: { msg: "Flag URL cannot be empty." },
         notNull: { msg: "Flag URL is required." },
-        isUrl: {
-          msg: "The 'flag' field must contain a valid URL."
-        }
+        isUrl: { msg: "The 'flag' field must contain a valid URL." }
       }
     },
     continent: {
@@ -73,7 +72,7 @@ module.exports = (sequelize, DataTypes) => {
 
           const validContinents = ["Africa", "Asia", "Europe", "North America", "South America", "Oceania", "Antarctica"];
           if (!validContinents.includes(value)) {
-            throw new Error(`The continent '${value}' is not recognized. It must be one of the following: ${validContinents.join(', ')}.`);
+            throw new Error(`Continent must be one of: Africa, Asia, Europe, North America, South America, Oceania, Antarctica.`);
           }
         }
       }
@@ -82,6 +81,6 @@ module.exports = (sequelize, DataTypes) => {
     // Timestamp management
     timestamps: true,
     createdAt: 'created', 
-    updatedAt: 'updated'      
-  });
+    updatedAt: 'updated'
+  })
 }
