@@ -17,9 +17,13 @@ app
 db.initDb()
 
 require('./src/routes/login')(app)
-
+// ___GET
 require('./src/routes/findAllCountries')(app)
 require('./src/routes/findCountryByPk')(app)
+// ___POST
+require('./src/routes/createCountry')(app)
+// ___PUT
+// ___DELETE
 
 app.use(({res}) => {
     const message = 'Unable to find the resource requested! You can try another URL.'
