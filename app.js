@@ -23,6 +23,7 @@ require('./src/routes/findCountryByPk')(app)
 // ___POST
 require('./src/routes/createCountry')(app)
 // ___PUT
+require('./src/routes/updateCountry')(app)
 // ___DELETE
 
 app.use(({res}) => {
