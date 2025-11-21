@@ -25,6 +25,7 @@ require('./src/routes/createCountry')(app)
 // ___PUT
 require('./src/routes/updateCountry')(app)
 // ___DELETE
+require('./src/routes/deleteCountry')(app)
 
 app.use(({res}) => {
     const message = 'Unable to find the resource requested! You can try another URL.'
