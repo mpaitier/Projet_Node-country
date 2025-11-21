@@ -19,6 +19,8 @@ db.initDb()
 require('./src/routes/login')(app)
 // ___GET
 require('./src/routes/getCountriesStats')(app)
+require('./src/routes/getCountriesByContinent')(app)
+require('./src/routes/getCountriesByContinentName')(app)
 
 require('./src/routes/findAllCountries')(app)
 require('./src/routes/findCountryByPk')(app)
