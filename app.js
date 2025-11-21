@@ -17,6 +17,7 @@ app
 db.initDb()
 
 require('./src/routes/login')(app)
+require('./src/routes/findAllCountries')(app)
 
 app.use(({res}) => {
     const message = 'Unable to find the resource requested! You can try another URL.'
